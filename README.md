@@ -4,7 +4,7 @@
   <br>
 </h1>
 
-<h4 align="center">Source code for hyro's website, simple and modern page.</h4>
+<h4 align="center">Source code for slovakia in charts (Slovensko v Grafoch), simple and modern page with slovakia analytics.</h4>
 
 <p align="center">
     <a href="https://discord.gg/kFPKmEKeMS/" alt="Discord">
