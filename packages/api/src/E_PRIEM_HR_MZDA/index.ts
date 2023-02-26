@@ -1,6 +1,6 @@
 import zamestnanie from "./types/zamestnanie.js";
 import vzdelanie from "./types/vzdelanie.js";
-import { SK0 } from "./constants.js";
+import { SK0 } from "../constants.js";
 import vek from "./types/vek.js";
 import Cas from "./types/+cas.js";
 

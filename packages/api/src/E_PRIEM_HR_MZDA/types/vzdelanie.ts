@@ -1,6 +1,7 @@
 import { parseStringPromise } from "xml2js";
 import { betterMeasurement } from "../../utils.js";
-import { SK_VALUES, VZDELANIE_VALUES } from "../constants.js";
+import { VZDELANIE_VALUES } from "../constants.js";
+import { SK_VALUES } from "../../constants.js";
 
 let cache: any[] | null = null;
 let cachedAt: number | null = null;
