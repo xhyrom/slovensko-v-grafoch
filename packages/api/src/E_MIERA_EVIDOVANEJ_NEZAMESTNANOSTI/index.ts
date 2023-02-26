@@ -30,7 +30,7 @@ const get = async () => {
         .sort((a: any, b: any) => a.year - b.year);
     cachedAt = Date.now();
 
-    return cache;
+    return cache!;
 };
 
 const get_ids = async () => {
@@ -55,7 +55,7 @@ const get_ids = async () => {
         .sort((a: any, b: any) => a.year - b.year);
     cachedIdAt = Date.now();
 
-    return cache;
+    return cache!;
 };
 
 const get_together = async () =>

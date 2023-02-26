@@ -13,6 +13,7 @@
     "author": "xHyroM",
     "license": "ISC",
     "dependencies": {
+        "@fastify/compress": "^6.2.0",
         "fastify": "^4.13.0",
         "jsonstat-toolkit": "^1.4.2",
         "xml2js": "^0.4.23"

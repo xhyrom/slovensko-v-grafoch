@@ -11,6 +11,11 @@ fastify.register(E_MIERA_EVIDOVANEJ_NEZAMESTNANOSTI, {
     prefix: "/e_miera_evidovanej_nezamestnanosti",
 });
 
+await fastify.register(import("@fastify/compress"), {
+    global: true,
+    encodings: ["gzip"],
+});
+
 fastify.get("/", async () => {
     return fastify.printRoutes();
 });
