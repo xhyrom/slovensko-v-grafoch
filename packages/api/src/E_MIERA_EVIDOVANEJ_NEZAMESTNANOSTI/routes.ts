@@ -14,6 +14,7 @@ export default async function (fastify: FastifyInstance, _: any, done: any) {
                 labels: await E_MIERA_EVIDOVANEJ_NEZAMESTNANOSTI.get_together(),
                 ids: await E_MIERA_EVIDOVANEJ_NEZAMESTNANOSTI.get_ids_together(),
             },
+            source: "https://data.statistics.sk/api",
         });
     });
 
@@ -21,6 +22,7 @@ export default async function (fastify: FastifyInstance, _: any, done: any) {
         return reply.send({
             data: await E_MIERA_EVIDOVANEJ_NEZAMESTNANOSTI.get(),
             together: await E_MIERA_EVIDOVANEJ_NEZAMESTNANOSTI.get_together(),
+            source: "https://data.statistics.sk/api",
         });
     });
 
@@ -53,6 +55,7 @@ export default async function (fastify: FastifyInstance, _: any, done: any) {
                               indicator.replaceAll(" ", "").toLowerCase()
                       )
                     : await E_MIERA_EVIDOVANEJ_NEZAMESTNANOSTI.get_ids_together(),
+                source: "https://data.statistics.sk/api",
             });
         }
     );

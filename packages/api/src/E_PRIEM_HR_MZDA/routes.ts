@@ -18,6 +18,7 @@ export default async function (fastify: FastifyInstance, _: any, done: any) {
                 by_age: await E_PRIEM_HR_MZDA.by_age_together(),
                 with_time: await E_PRIEM_HR_MZDA.with_time_together(),
             },
+            source: "https://data.statistics.sk/api",
         });
     });
 
@@ -25,6 +26,7 @@ export default async function (fastify: FastifyInstance, _: any, done: any) {
         return reply.send({
             data: await E_PRIEM_HR_MZDA.by_job(),
             together: await E_PRIEM_HR_MZDA.by_job_together(),
+            source: "https://data.statistics.sk/api",
         });
     });
 
@@ -32,6 +34,7 @@ export default async function (fastify: FastifyInstance, _: any, done: any) {
         return reply.send({
             data: await E_PRIEM_HR_MZDA.by_education(),
             together: await E_PRIEM_HR_MZDA.by_education_together(),
+            source: "https://data.statistics.sk/api",
         });
     });
 
@@ -39,6 +42,7 @@ export default async function (fastify: FastifyInstance, _: any, done: any) {
         return reply.send({
             data: await E_PRIEM_HR_MZDA.by_age(),
             together: await E_PRIEM_HR_MZDA.by_age_together(),
+            source: "https://data.statistics.sk/api",
         });
     });
 
@@ -46,6 +50,7 @@ export default async function (fastify: FastifyInstance, _: any, done: any) {
         return reply.send({
             data: await E_PRIEM_HR_MZDA.with_time(),
             together: await E_PRIEM_HR_MZDA.with_time_together(),
+            source: "https://data.statistics.sk/api",
         });
     });
 

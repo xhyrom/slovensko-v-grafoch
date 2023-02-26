@@ -36,4 +36,5 @@ To contribute to this project, please follow the [standard Git workflow](https:/
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).  
+All data from [statistics.sk](http://www.statistics.sk/) is covered by [Creative Commons Attribution License (cc-by) 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
