@@ -4,7 +4,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        body: ["Golos Text", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+      },
+      backgroundImage: {
+        primaryDotted: "radial-gradient(#355DFD 2px, #214DFF 2px)",
+      },
+      backgroundSize: {
+        primaryDottedSize: "15px 15px",
       },
     },
   },
