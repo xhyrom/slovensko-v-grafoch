@@ -16,7 +16,6 @@
             "inputs": ["test/**/*.ts"]
         },
         "dev": {
-            "dependsOn": ["build", "start"],
             "outputs": [],
             "inputs": []
         }
