@@ -8,6 +8,7 @@ module.exports = {
       },
       backgroundImage: {
         primaryDotted: "radial-gradient(#355DFD 2px, #214DFF 2px)",
+        bratislavaDotted: "radial-gradient(#DC4436 2px, #D83728 2px)",
       },
       backgroundSize: {
         primaryDottedSize: "15px 15px",
