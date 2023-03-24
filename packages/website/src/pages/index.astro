@@ -1,6 +1,51 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon";
+
+const kraje = [
+  {
+    name: "Bratislavsky kraj",
+    border: "hover:outline-[#DA121A]/50",
+    background: "bg-[#DA121A]",
+    image: "bg-[url('../src/assets/images/bratislava.png')]",
+  },
+  {
+    name: "Trenčiansky kraj",
+    border: "hover:outline-[#0159A1]/50",
+    background: "bg-[#0159A1]",
+    image: "bg-[url('../src/assets/images/trencin.png')]",
+  },
+  {
+    name: "Košický kraj",
+    border: "hover:outline-[#658DC0]/50",
+    background: "bg-[#658DC0]",
+    image: "bg-[url('../src/assets/images/koisce.png')]",
+  },
+  {
+    name: "Banskobystrický kraj",
+    border: "hover:outline-[#FDDB25]/50",
+    background: "bg-[#FDDB25]",
+    image: "bg-[url('../src/assets/images/banska.png')]",
+  },
+  {
+    name: "Trnavský kraj",
+    border: "hover:outline-[#0066AE]/50",
+    background: "bg-[#0066AE]",
+    image: "bg-[url('../src/assets/images/trnava.png')]",
+  },
+  {
+    name: "Žilinský kraj",
+    border: "hover:outline-[#09963D]/50",
+    background: "bg-[#09963D]",
+    image: "bg-[url('../src/assets/images/zilina.png')]",
+  },
+  {
+    name: "Prešovský kraj",
+    border: "hover:outline-[#CE281B]/50",
+    background: "bg-[#CE281B]",
+    image: "bg-[url('../src/assets/images/presov.png')]",
+  },
+];
 ---
 
 <Layout>
@@ -45,13 +90,21 @@ import { Icon } from "astro-icon";
         Zanalyzovaných dát & a veci a tak.
       </p>
     </section>
-    <section class="mt-24 flex justify-center">
-      <a
-        class="rounded-xl bg-[#da121a] p-16 text-3xl font-extrabold text-white outline outline-4 outline-transparent transition-all duration-200 hover:scale-105 hover:cursor-pointer hover:outline-red-600/50"
-      >
-        Bratislavský kraj
-      </a>
+    <h2 class="mt-48 text-center text-6xl font-extrabold">Vyberte si kraj</h2>
+    <section
+      class="container mx-auto mt-24 flex flex-col justify-center gap-y-12 px-5"
+    >
+      {
+        kraje.map((kraj) => (
+          <a
+            class={`flex w-full items-center justify-center rounded-2xl text-center text-2xl ${kraj.background} ${kraj.image} bg-cover px-32 py-32  font-extrabold uppercase text-white outline outline-4 outline-transparent transition-all duration-200 hover:scale-105 hover:cursor-pointer md:text-5xl ${kraj.border}`}
+          >
+            {kraj.name}
+          </a>
+        ))
+      }
     </section>
+
     <div class="mt-64"></div>
   </main>
 </Layout>
