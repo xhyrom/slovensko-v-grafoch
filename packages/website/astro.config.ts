@@ -6,7 +6,7 @@ import compress from "astro-compress";
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-    site: "https://svg.xhyrom.me/",
+    site: "https://svg.xhyrom.dev/",
     base: "/",
     trailingSlash: "always",
     output: "static",
