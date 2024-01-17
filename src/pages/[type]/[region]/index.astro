@@ -1,0 +1,19 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  return [
+    { params: {
+      type: "np3103rr",
+      region: "bk"
+    }, props: { /* optional */ } },
+  ];
+}
+
+const { type, region } = Astro.params;
+---
+
+<Layout>
+  <p>{ type }</p>
+  <p>{ region }</p>
+</Layout>
