@@ -1,0 +1,82 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import {
+  type ISORegion,
+  type Slovakia,
+  mapToNuts13,
+} from "../../../lib/nuts13.ts";
+import JSONStat from "jsonstat-toolkit";
+
+export async function getStaticPaths() {
+  const data = await JSONStat(
+    "https://data.statistics.sk/api/v2/dataset/np3103rr/all/all/all/all?lang=sk&type=json",
+  );
+
+  return [
+    {
+      params: {
+        type: "np3103rr",
+        region: "bk",
+      },
+      props: {
+        data: data.Dataset(0).toTable({ type: "arrobj" }),
+        groupBy: "np3103rr_ukaz",
+      },
+    },
+  ];
+}
+
+export interface Params {
+  type: string;
+  region: ISORegion | Slovakia;
+}
+
+export interface Props {
+  data: Array<{
+    nuts13: string;
+    year: number;
+    value: number;
+  }>;
+  groupBy: string;
+}
+
+const { data: allData, groupBy } = Astro.props;
+const { type, region } = Astro.params as Params;
+const nuts13 = mapToNuts13(region);
+
+const data = allData.filter((row) => row["nuts13"] === nuts13);
+let groups = data.reduce((acc, row) => {
+  const key = row[groupBy];
+  if (!acc[key]) {
+    acc[key] = [];
+  }
+  acc[key].push(row);
+  return acc;
+}, {});
+
+const encoded = Buffer.from(JSON.stringify(data)).toString("base64");
+---
+
+<div id="data" data-everything={encoded}></div>
+
+<Layout>
+  <p>{type}</p>
+  <p>{region}</p>
+
+  {
+    Object.entries(groups).map(([key, _], i) => (
+      <div>
+        <h2>{key}</h2>
+
+        <div id={`chart-${i}`} />
+        <bar-chart
+          data-id={`chart-${i}`}
+          data-groupby={groupBy}
+          data-group={key}
+        />
+      </div>
+    ))
+  }
+
+  <script src="../../../charts/bar_chart.ts"></script>
+</Layout>
